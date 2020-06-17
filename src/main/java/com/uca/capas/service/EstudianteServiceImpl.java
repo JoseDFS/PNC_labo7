@@ -42,5 +42,15 @@ public class EstudianteServiceImpl implements EstudianteService{
 		estudianteRepo.deleteById(codigoEstudiante);
 		
 	}
+	@Override
+	public List<Estudiante> filtarPor(String cadena) throws DataAccessException {
+		return estudianteRepo.findByNombre(cadena);
+		
+	}
+	
+	@Override
+	public List<Estudiante> empiezaCon(String apellido) throws DataAccessException {
+		return estudianteRepo.findByApellidoStartingWith(apellido);
+	}
 
 }

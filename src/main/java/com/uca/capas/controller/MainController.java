@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -117,5 +118,20 @@ public class MainController {
 			mv.setViewName("agregarEstudiante");
 		}
 		return mv;
+	}
+	
+	@PostMapping(value = "/Filtrar")
+	public ModelAndView filtro(@RequestParam(value = "nombre") String nombre) {
+		ModelAndView mav = new ModelAndView();
+		List<Estudiante> estudiantes = null;
+		try {
+			//estudiantes = estudianteService.empiezaCon(nombre);
+			estudiantes = estudianteService.filtarPor(nombre);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.addObject("estudiantes", estudiantes);
+		mav.setViewName("main");
+		return mav;
 	}
 }

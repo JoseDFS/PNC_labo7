@@ -16,5 +16,8 @@ public interface EstudianteService {
 	
 	public void delete(Integer codigoEstudiante) throws DataAccessException;
 	
+	public List<Estudiante> filtarPor(String cadena) throws DataAccessException;
+	
+	List<Estudiante> empiezaCon(String apellido) throws DataAccessException;
 
 }
