@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Estudiante</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1 class="mt-4">Ingreso de Estudiante</h1>
+			<div class="card mb-4">
+            	<div class="card-body">
+            		<form method="post" th:action="@{/ingresar}" th:object="${estudiante}">
+	            		<div class="form-group"><label class="small mb-1" for="nombre">Nombre </label><input class="form-control py-4" th:field="*{nombre}" id="nombre" type="text" placeholder="Ingrese Nombre" style="width: 400px" name="nombre" />
+	            		<span th:errors="*{nombre}" style="color: #FF0000"></span></div>
+	                    <div class="form-group"><label class="small mb-1" for="apellido">Apellido </label><input class="form-control py-4" th:field="*{apellido}" id="apellido" type="text" placeholder="Ingrese Apellido" style="width: 400px" name="apellido"/>
+	                    <span th:errors="*{apellido}"style="color: #FF0000"></span></div>
+	                    <div class="form-group"><label class="small mb-1" for="Carne">Carne </label><input class="form-control py-4" th:field="*{carne}" id="carne" type="text" placeholder="Ingrese N.Carne" style="width: 400px" name="carne"/>
+	                    <span th:errors="*{carne}"style="color: #FF0000"></span></div>
+	                    <div class="form-group"><label class="small mb-1" for="Carrera">Carrera </label><input class="form-control py-4" th:field="*{carrera}" id="carrera" type="text" placeholder="Ingrese Carrera" style="width: 400px" name="carrera"/>
+	                    <span th:errors="*{carrera}"style="color: #FF0000"></span></div>
+	                    
+	                  
+	                    <div class="form-group"><input type="submit" class="btn btn-primary" value="Guardar Estudiante"></a></div>
+	                </form>
+            	</div>
+            </div>
+    <a href="/main" class="btn btn-primary">Ver Listado</a>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
