@@ -22,16 +22,13 @@ public class Estudiante {
 	
 	@Column(name="nombre")
 	@Size(min=1,max=30)
-	@NotEmpty(message = "El campo no puede estar vacío")
 	private String nombre;
 	
 	@Column(name="apellido")
 	@Size(min=1,max=30)
-	@NotEmpty(message = "El campo no puede estar vacío")
 	private String apellido;
 	
 	@Min(value=18,message="No puede ser menor de 18")
-	@NotEmpty(message = "El campo no puede estar vacío")
 	@Column(name="edad")
 	private Integer edad;
 	

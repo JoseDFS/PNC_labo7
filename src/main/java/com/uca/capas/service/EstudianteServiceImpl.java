@@ -7,7 +7,6 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.uca.capas.dao.EstudianteDAO;
 import com.uca.capas.dao.EstudiantesDao;
 import com.uca.capas.domain.Estudiante;
 import com.uca.capas.repositories.EstudianteRepo;
