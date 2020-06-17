@@ -68,6 +68,37 @@ public class MainController {
 		return mav;
 	
 	}
+	@RequestMapping(value = "/editarEstudiante", method = RequestMethod.POST)
+	public ModelAndView findOneEdit(@RequestParam(value = "codigo") int id) {
+		ModelAndView mav = new ModelAndView();
+		Estudiante estudiante = null;
+		try {
+			estudiante = estudianteService.findOne(id);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.addObject("estudiante", estudiante);
+		mav.setViewName("agregarEstudiante");
+		
+		return mav;
+	
+	}
+	@RequestMapping(value = "/borrarEstudiante", method = RequestMethod.POST)
+	public ModelAndView delete(@RequestParam(value = "codigo") int id) {
+		ModelAndView mav = new ModelAndView();
+		List<Estudiante> estudiantes =null;
+		try {
+			 estudianteService.delete(id);
+			 estudiantes = estudianteService.findAll();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		mav.addObject("estudiantes", estudiantes);
+		mav.setViewName("main");
+		
+		return mav;
+	
+	}
 	
 	@RequestMapping("/save")
 	public ModelAndView procesar(@Valid @ModelAttribute Estudiante estudiante, BindingResult result) {

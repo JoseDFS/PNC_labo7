@@ -12,6 +12,7 @@
 			<div class="card mb-4">
             	<div class="card-body">
             		<form method="post" th:action="@{/save}" th:object="${estudiante}">
+            			<input type="hidden" th:field="*{codigoEstudiante}">
 	            		<div class="form-group"><label class="small mb-1" for="nombre">Nombre </label><input class="form-control py-4" th:field="*{nombre}"  type="text" placeholder="Ingrese Nombre" style="width: 400px" name="nombre" />
 	            		<span th:errors="*{nombre}" style="color: #FF0000"></span></div>
 	                    <div class="form-group"><label class="small mb-1" for="apellido">Apellido </label><input class="form-control py-4" th:field="*{apellido}"  type="text" placeholder="Ingrese Apellido" style="width: 400px" name="apellido"/>
